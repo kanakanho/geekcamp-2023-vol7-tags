@@ -37,34 +37,39 @@ for path in paths:
     for tag in tags:
         # 文字列の最初に#がついていたら消す
         if tag[0] == "#":
-            tag = tag[1:]
+            tag = tag.replace("#", "")
 
         # タグの重複チェック
         existing_tag = c.execute("SELECT * FROM node WHERE node=?", (tag,)).fetchone()
-        if not existing_tag:
+        if existing_tag:
+            c.execute(
+                "UPDATE node SET items_count = items_count + 1 WHERE node=?", (tag,)
+            )
+            conn.commit()
+        else:
             c.execute("INSERT INTO node(node) VALUES (?)", (tag,))
             conn.commit()
 
-            # tags のほかのtagを取得
-            other_tags = [other_tag for other_tag in tags if other_tag != tag]
-            tag_id = c.execute("SELECT id FROM node WHERE node=?", (tag,)).fetchone()[0]
+        # tags のほかのtagを取得
+        other_tags = [other_tag for other_tag in tags if other_tag != tag]
+        tag_id = c.execute("SELECT id FROM node WHERE node=?", (tag,)).fetchone()[0]
 
-            # connection_strengthの値を取得
-            strength = c.execute(
-                "SELECT connection_strength FROM connection WHERE node=?", (tag,)
-            ).fetchone()
+        # connection_strengthの値を取得
+        strength = c.execute(
+            "SELECT connection_strength FROM connection WHERE node=?", (tag,)
+        ).fetchone()
 
-            if strength:
-                strength = strength[0]
-            else:
-                strength = 0
+        if strength:
+            strength = strength[0]
+        else:
+            strength = 0
 
-            for other_tag in other_tags:
-                c.execute(
-                    "INSERT INTO connection(node, connect_node_id, connection_strength) VALUES (?, ?, ?)",
-                    (tag, other_tag, strength + 1),
-                )
-                conn.commit()
+        for other_tag in other_tags:
+            c.execute(
+                "INSERT INTO connection(node, connect_node_id, connection_strength) VALUES (?, ?, ?)",
+                (tag, other_tag, strength + 1),
+            )
+            conn.commit()
 
     sleep(2)
 conn.close()
