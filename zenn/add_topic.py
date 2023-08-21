@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import sqlite3
+from time import sleep
 
 conn = sqlite3.connect("data.db")
 c = conn.cursor()
@@ -10,7 +11,7 @@ articles_json = response.json()["articles"]
 
 # pathを取得
 paths = [article["path"] for article in articles_json]
-print(paths)
+# print(paths)
 for path in paths:
     # DBの中に同じpathがあるかどうかを確認
     c.execute("SELECT * FROM url WHERE url=?", (path,))
@@ -50,7 +51,7 @@ for path in paths:
 
             # connection_strengthの値を取得
             strength = c.execute(
-                "SELECT connection_strength FROM connection WHERE node_id=?", (tag_id,)
+                "SELECT connection_strength FROM connection WHERE node=?", (tag,)
             ).fetchone()
 
             if strength:
@@ -65,4 +66,5 @@ for path in paths:
                 )
                 conn.commit()
 
+    sleep(2)
 conn.close()
