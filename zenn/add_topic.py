@@ -6,8 +6,8 @@ from time import sleep
 conn = sqlite3.connect("data.db")
 c = conn.cursor()
 
-for i in range(1, 21):
-    response = requests.get(f"https://zenn.dev/api/articles{i}")
+for i in range(22, 81):
+    response = requests.get(f"https://zenn.dev/api/articles?page={i}")
     articles_json = response.json()["articles"]
 
     # pathを取得
@@ -37,7 +37,7 @@ for i in range(1, 21):
 
         for tag in tags:
             # 文字列の最初に#がついていたら消す
-            if tag[0] == "#":
+            if tag.startswith("#"):
                 tag = tag.replace("#", "")
 
             # タグの重複チェック
@@ -75,4 +75,4 @@ for i in range(1, 21):
                 conn.commit()
 
         sleep(2)
-    conn.close()
+conn.close()
