@@ -1,0 +1,441 @@
+[
+    {
+        "parent": {
+            "topic": "Python",
+            "summary": "Python is a versatile, high-level programming language known for its readability and clear syntax. It is widely used in web development, scientific computing, data analysis, artificial intelligence, and automation."
+        },
+        "related": [
+            {
+                "topic": "NumPy",
+                "relation": "Library"
+            },
+            {
+                "topic": "Django",
+                "relation": "Framework"
+            },
+            {
+                "topic": "Pandas",
+                "relation": "Library"
+            },
+            {
+                "topic": "Machine Learning",
+                "relation": "Prior Knowledge"
+            },
+            {
+                "topic": "Debugging",
+                "relation": "How to use"
+            },
+            {
+                "topic": "Flask",
+                "relation": "Framework"
+            },
+            {
+                "topic": "PyTorch",
+                "relation": "Library"
+            },
+            {
+                "topic": "List Comprehension",
+                "relation": "How to use"
+            },
+            {
+                "topic": "Virtual Environment",
+                "relation": "Module"
+            },
+            {
+                "topic": "Decorator",
+                "relation": "How to use"
+            }
+        ]
+    },
+
+    {
+        "parent": {
+            "topic": "JavaScript",
+            "summary": "JavaScript is a versatile scripting language primarily used for front-end web development. It allows dynamic interactions, animations, and manipulation of web content."
+        },
+        "related": [
+            {
+                "topic": "React",
+                "relation": "Library"
+            },
+            {
+                "topic": "Node.js",
+                "relation": "Framework"
+            },
+            {
+                "topic": "ES6",
+                "relation": "Programming Language"
+            },
+            {
+                "topic": "DOM Manipulation",
+                "relation": "How to use"
+            },
+            {
+                "topic": "Vue.js",
+                "relation": "Framework"
+            },
+            {
+                "topic": "TypeScript",
+                "relation": "Programming Language"
+            },
+            {
+                "topic": "Asynchronous Programming",
+                "relation": "How to use"
+            },
+            {
+                "topic": "Webpack",
+                "relation": "Module"
+            },
+            {
+                "topic": "Angular",
+                "relation": "Framework"
+            },
+            {
+                "topic": "Callback Functions",
+                "relation": "How to use"
+            }
+        ]
+    },
+
+    {
+        "parent": {
+            "topic": "Ruby",
+            "summary": "Ruby is a dynamic, object-oriented programming language known for its simplicity and productivity. It is commonly used in web development and scripting."
+        },
+        "related": [
+            {
+                "topic": "Ruby on Rails",
+                "relation": "Framework"
+            },
+            {
+                "topic": "Gems",
+                "relation": "Module"
+            },
+            {
+                "topic": "RSpec",
+                "relation": "Library"
+            },
+            {
+                "topic": "Metaprogramming",
+                "relation": "How to use"
+            },
+            {
+                "topic": "Sinatra",
+                "relation": "Framework"
+            },
+            {
+                "topic": "Blocks",
+                "relation": "How to use"
+            },
+            {
+                "topic": "Regular Expressions",
+                "relation": "How to use"
+            },
+            {
+                "topic": "Cucumber",
+                "relation": "Library"
+            },
+            {
+                "topic": "Hashes",
+                "relation": "How to use"
+            },
+            {
+                "topic": "Bundler",
+                "relation": "Module"
+            }
+        ]
+    },
+
+    {
+        "parent": {
+            "topic": "Rails",
+            "summary": "Ruby on Rails, often simply referred to as Rails, is a web application framework written in Ruby. It follows the Model-View-Controller (MVC) architectural pattern and emphasizes convention over configuration."
+        },
+        "related": [
+            {
+                "topic": "ActiveRecord",
+                "relation": "Module"
+            },
+            {
+                "topic": "Migrations",
+                "relation": "How to use"
+            },
+            {
+                "topic": "ActionView",
+                "relation": "Module"
+            },
+            {
+                "topic": "RESTful API",
+                "relation": "How to use"
+            },
+            {
+                "topic": "Scaffolding",
+                "relation": "How to use"
+            },
+            {
+                "topic": "Routing",
+                "relation": "How to use"
+            },
+            {
+                "topic": "RSpec-Rails",
+                "relation": "Library"
+            },
+            {
+                "topic": "ActiveJob",
+                "relation": "Module"
+            },
+            {
+                "topic": "Associations",
+                "relation": "How to use"
+            },
+            {
+                "topic": "Caching",
+                "relation": "How to use"
+            }
+        ]
+    },
+
+    {
+        "parent": {
+            "topic": "AWS",
+            "summary": "Amazon Web Services (AWS) is a cloud computing platform that offers a wide range of services, including computing power, storage, and databases, as well as tools for analytics, machine learning, and more."
+        },
+        "related": [
+            {
+                "topic": "EC2",
+                "relation": "Module"
+            },
+            {
+                "topic": "S3",
+                "relation": "Module"
+            },
+            {
+                "topic": "Lambda",
+                "relation": "Module"
+            },
+            {
+                "topic": "IAM",
+                "relation": "Module"
+            },
+            {
+                "topic": "CloudFormation",
+                "relation": "Module"
+            },
+            {
+                "topic": "DynamoDB",
+                "relation": "Module"
+            },
+            {
+                "topic": "Elastic Beanstalk",
+                "relation": "Module"
+            },
+            {
+                "topic": "RDS",
+                "relation": "Module"
+            },
+            {
+                "topic": "SNS",
+                "relation": "Module"
+            },
+            {
+                "topic": "VPC",
+                "relation": "Module"
+            }
+        ]
+    },
+    {
+        "parent": {
+            "topic": "Docker",
+            "summary": "Docker is a platform for developing, shipping, and running applications in containers. It provides a consistent environment across different stages of the development and deployment process."
+        },
+        "related": [
+            {
+                "topic": "Containerization",
+                "relation": "How to use"
+            },
+            {
+                "topic": "Docker Compose",
+                "relation": "Module"
+            },
+            {
+                "topic": "Kubernetes",
+                "relation": "Framework"
+            },
+            {
+                "topic": "Images",
+                "relation": "How to use"
+            },
+            {
+                "topic": "Swarm",
+                "relation": "Framework"
+            },
+            {
+                "topic": "Networking",
+                "relation": "How to use"
+            },
+            {
+                "topic": "Volumes",
+                "relation": "How to use"
+            },
+            {
+                "topic": "Dockerfile",
+                "relation": "Module"
+            },
+            {
+                "topic": "Orchestration",
+                "relation": "How to use"
+            },
+            {
+                "topic": "Registry",
+                "relation": "Module"
+            }
+        ]
+    },
+
+    {
+        "parent": {
+            "topic": "Java",
+            "summary": "Java is a widely-used, class-based, object-oriented programming language known for its platform independence. It is used for building applications ranging from desktop software to web and mobile applications."
+        },
+        "related": [
+            {
+                "topic": "Spring Framework",
+                "relation": "Framework"
+            },
+            {
+                "topic": "JVM",
+                "relation": "Module"
+            },
+            {
+                "topic": "Java Swing",
+                "relation": "Library"
+            },
+            {
+                "topic": "Inheritance",
+                "relation": "How to use"
+            },
+            {
+                "topic": "JavaFX",
+                "relation": "Library"
+            },
+            {
+                "topic": "Threading",
+                "relation": "How to use"
+            },
+            {
+                "topic": "Maven",
+                "relation": "Module"
+            },
+            {
+                "topic": "Interfaces",
+                "relation": "How to use"
+            },
+            {
+                "topic": "Hibernate",
+                "relation": "Library"
+            },
+            {
+                "topic": "Exception Handling",
+                "relation": "How to use"
+            }
+        ]
+    },
+
+    {
+        "parent": {
+            "topic": "iOS",
+            "summary": "iOS is a mobile operating system developed by Apple for its range of mobile devices. It powers iPhones, iPads, and iPod Touch devices, and supports a wide variety of applications."
+        },
+        "related": [
+            {
+                "topic": "UIKit",
+                "relation": "Framework"
+            },
+            {
+                "topic": "SwiftUI",
+                "relation": "Framework"
+            },
+            {
+                "topic": "Objective-C",
+                "relation": "Programming Language"
+            },
+            {
+                "topic": "Auto Layout",
+                "relation": "How to use"
+            },
+            {
+                "topic": "Core Data",
+                "relation": "Module"
+            },
+            {
+                "topic": "App Store",
+                "relation": "Module"
+            },
+            {
+                "topic": "Cocoa Touch",
+                "relation": "Framework"
+            },
+            {
+                "topic": "Storyboard",
+                "relation": "Module"
+            },
+            {
+                "topic": "Push Notifications",
+                "relation": "How to use"
+            },
+            {
+                "topic": "Xcode",
+                "relation": "Module"
+            }
+        ]
+    },
+
+    {
+        "parent": {
+            "topic": "Swift",
+            "summary": "Swift is a powerful, open-source programming language developed by Apple. It is designed for building applications on the iOS, macOS, watchOS, and tvOS platforms, and focuses on safety and performance."
+        },
+        "related": [
+            {
+                "topic": "Optionals",
+                "relation": "How to use"
+            },
+            {
+                "topic": "Swift Package Manager",
+                "relation": "Module"
+            },
+            {
+                "topic": "Swift Playgrounds",
+                "relation": "Module"
+            },
+            {
+                "topic": "ARC (Automatic Reference Counting)",
+                "relation": "How to use"
+            },
+            {
+                "topic": "Protocol-Oriented Programming",
+                "relation": "How to use"
+            },
+            {
+                "topic": "UIKit",
+                "relation": "Framework"
+            },
+            {
+                "topic": "Error Handling",
+                "relation": "How to use"
+            },
+            {
+                "topic": "Core Animation",
+                "relation": "Module"
+            },
+            {
+                "topic": "Concurrency",
+                "relation": "How to use"
+            },
+            {
+                "topic": "SwiftLint",
+                "relation": "Module"
+            }
+        ]
+    }
+]
