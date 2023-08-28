@@ -23,21 +23,25 @@ today = str(today)
 today = today.replace("-", ".")
 today = str(today[2:])
 
+nodes = []
 # nodeの名前を取得
-cursor.execute("SELECT node FROM add_node WHERE items_count > 15")
+cursor.execute("SELECT node FROM add_node")
 rows = cursor.fetchall()
-node_names = [row[0] for row in rows]
+for row in rows:
+    nodes.append(row[0])
 
+until_nodes = []
 # node_namesの中で、articlesにないものを取得
 cursor.execute("SELECT node FROM articles")
 rows = cursor.fetchall()
-
-# あるものは削除
 for row in rows:
-    if row[0] in node_names:
-        node_names.remove(row[0])
+    until_nodes.append(row[0])
 
-node_names = [row[0] for row in rows]
+node_names = []
+# あるものは削除
+for row in nodes:
+    if row[0] not in until_nodes:
+        node_names.append(row[0])
 
 
 def get_summary_from_github(query):
@@ -72,8 +76,6 @@ def get_summary_from_github(query):
                 print(f"github:{query}")
     except:
         get_summary_from_wikipedia_ja(query)
-    # 一致するものがなかった場合
-    get_summary_from_wikipedia_ja(query)
 
 
 def get_summary_from_wikipedia_ja(query):
@@ -161,13 +163,13 @@ def get_summary_from_google(query):
         print(text)
         articles.append(text)
         cursor.execute(
-            "UPDATE articles SET article = ? ,date = ? WHERE node = ?",
+            "UPDATE article_tmp SET article = ? ,last_update = ? WHERE node_name = ?",
             (text, today, query),
         )
         conn.commit()
-        df = pd.DataFrame(articles, columns=["article"])
-        df.to_csv("google_articles.csv", index=False)
-        return True
+        # df = pd.DataFrame(articles, columns=["article"])
+        # df.to_csv("google_articles.csv", index=False)
+        # print(f"{node_name}: {node_name}のarticleを取得しました")
 
 
 # データを取得
