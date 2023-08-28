@@ -40,8 +40,8 @@ for row in rows:
 node_names = []
 # あるものは削除
 for row in nodes:
-    if row[0] not in until_nodes:
-        node_names.append(row[0])
+    if row not in until_nodes:
+        node_names.append(row)
 
 
 def get_summary_from_github(query):
@@ -133,11 +133,12 @@ def get_summary_from_google(query):
     sleep(1)
     data = response.text
     soup = BeautifulSoup(data, "html.parser")
-    with open("google.html", mode="w", encoding="utf-8") as f:
-        f.write(soup.prettify())
     # span class="BNeawe"の中のテキストを取得
-    text_shift = soup.find("span", class_="BNeawe").get_text()
-    text = soup.find("div", class_="BNeawe s3v9rd AP7Wnd").get_text()
+    # text_shift = soup.find("span", class_="BNeawe").get_text()
+    try:
+        text = soup.find("div", class_="BNeawe s3v9rd AP7Wnd").get_text()
+    except:
+        return False
     # text = text.replace(text_shift, "")
     # 最初に"関連する質問"が出てくるとき、yyyy/mm/ddが最初に出てきくるとき、もう一度実行する
     if (
