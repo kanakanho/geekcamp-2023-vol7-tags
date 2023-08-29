@@ -69,8 +69,8 @@ def get_summary_from_github(query):
                     get_summary_from_wikipedia_ja(query)
                 # article版の対応するtagのdbのarticleのNULLに書き出す
                 cursor.execute(
-                    "UPDATE articles SET article = ?, date = ? WHERE node = ?",
-                    (description, today, query),
+                    "INSERT INTO articles (node, article, date) VALUES (?, ?, ?)",
+                    (query, description, last_up),
                 )
                 conn.commit()
                 print(f"github:{query}")
@@ -120,7 +120,8 @@ def get_summary_from_wikipedia_en(query):
         conn.commit()
         print(f"wiki_en:{query}")
     else:
-        get_summary_from_google(query)
+        print(f"{query}:failed")
+        return False
 
 
 articles = []
